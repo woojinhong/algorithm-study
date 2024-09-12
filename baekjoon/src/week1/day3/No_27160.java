@@ -1,4 +1,4 @@
-package week1;
+package week1.day3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -55,5 +55,7 @@ public class No_27160 {
 
         // 개수 5 조건에 따른 출력
         System.out.println(map.containsValue(5) ? "YES" : "NO");
+
+        //	40304	352
     }
 }

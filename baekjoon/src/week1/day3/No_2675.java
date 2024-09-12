@@ -1,4 +1,4 @@
-package week1;
+package week1.day3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -47,4 +47,5 @@ public class No_2675 {
         // 모든 입력 처리가 완료된 후 최종 결과 출력
         System.out.print(finalResult.toString());
     }
+    //14120	96
 }

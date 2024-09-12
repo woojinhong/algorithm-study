@@ -1,4 +1,4 @@
-package week1;
+package week1.day3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,3 +29,4 @@ public class No_2908 {
         );
     }
 }
+	//14148	108
