@@ -13,33 +13,44 @@ import java.util.StringTokenizer;
  그리고 두 VPS x 와 y를 접합(concatenation)시킨 새로운 문자열 xy도 VPS 가 된다.
  예를 들어 “(())()”와 “((()))” 는 VPS 이지만 “(()(”, “(())()))” , 그리고 “(()” 는 모두 VPS 가 아닌 문자열이다.
 
- 입력으로 주어진 괄호 문자열이 VPS 인지 아닌지를 판단해서 그 결과를 YES 와 NO 로 나타내어야 한다.
+ 여러분은 입력으로 주어진 괄호 문자열이 VPS 인지 아닌지를 판단해서 그 결과를 YES 와 NO 로 나타내어야 한다.
  */
 public class No_9012 {
 
     public static void main(String[] args) throws IOException {
 
 
+        Stack<Character> parenthesis ;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
 
-        for (int i = 0; i<n; i++){
-            Stack<String> stack  = new Stack<>();
-            StringTokenizer token = new StringTokenizer(br.readLine());
-            String a = token.nextToken();
-           if(a.equals("(")){
-               stack.push(a);
-           }else if (a.equals(")")){
-               if(stack.isEmpty()){
-                   System.out.println("NO");
-                   break;
-               }
-               stack.pop();
-           }
+        System.out.println("Input line: " + n);  // 입력 값을 출력해서 확인
+
+        for (int i = 0; i < n; i++) {
+            parenthesis = new Stack<>();
+            String line = br.readLine();
+            System.out.println("line = " + line);
+
+            for(int j= 0 ; j<line.length() ; j ++){
+                Character element = line.charAt(j);
+                if(element.equals('(')){
+                    parenthesis.push(element);
+                }
+                else if (element.equals(')')) {
+                    if(parenthesis.isEmpty()){
+                        System.out.println("NO");
+                        continue;
+                    } else {
+                        parenthesis.pop();
+                    }
+
+                }
+            }
+            if(parenthesis.isEmpty())
+                System.out.println("YES");
+            
         }
-        if(stack.isEmpty()){
-            System.out.println("YES");
-        }
+
     }
 }
