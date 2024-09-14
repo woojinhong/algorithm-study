@@ -19,38 +19,39 @@ public class No_9012 {
 
     public static void main(String[] args) throws IOException {
 
-
-        Stack<Character> parenthesis ;
+        Stack<Character> parenthesis;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-
-        System.out.println("Input line: " + n);  // 입력 값을 출력해서 확인
+        // 입력 값을 출력해서 확인
 
         for (int i = 0; i < n; i++) {
             parenthesis = new Stack<>();
             String line = br.readLine();
-            System.out.println("line = " + line);
 
-            for(int j= 0 ; j<line.length() ; j ++){
+
+            boolean isValid = true;  // 유효성 체크를 위한 플래그
+
+            for (int j = 0; j < line.length(); j++) {
                 Character element = line.charAt(j);
-                if(element.equals('(')){
+                if (element.equals('(')) {
                     parenthesis.push(element);
-                }
-                else if (element.equals(')')) {
-                    if(parenthesis.isEmpty()){
+                } else if (element.equals(')')) {
+                    if (parenthesis.isEmpty()) {
                         System.out.println("NO");
-                        continue;
+                        isValid = false;  // 유효하지 않다고 플래그 설정
+                        break;  // 현재 입력에 대한 처리를 종료
                     } else {
                         parenthesis.pop();
                     }
-
                 }
             }
-            if(parenthesis.isEmpty())
-                System.out.println("YES");
-            
-        }
 
+            if (isValid && parenthesis.isEmpty()) {
+                System.out.println("YES");
+            } else if (isValid) {
+                System.out.println("NO");
+            }
+        }
     }
 }
