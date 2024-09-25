@@ -100,4 +100,6 @@ public class No_10866 {
         System.out.print(sb);
         }
     }
+    //deque arr = 19036/164
+    //Linked list = 19112/172
 

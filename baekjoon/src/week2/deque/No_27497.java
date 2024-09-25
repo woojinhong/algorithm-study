@@ -24,7 +24,7 @@ public class No_27497 {
         int n = Integer.parseInt(br.readLine());
 
         Deque<String> deque = new LinkedList<>();
-        // 마지막 문자열 트래킹 하기 위해 stack 활용
+        // 블록이 추가된 위치를 기록하는 데 사용
         Stack<Integer> blockstack = new Stack<>();
         // 테스트 케이스 n번
         for (int i = 0; i < n; i++) {
