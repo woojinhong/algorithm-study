@@ -1,8 +1,8 @@
-package String;
+package string.bronze;
 
 import java.util.Scanner;
 
-public class b_1157 {
+public class No_1157 {
     public static void main(String[] args) {
 
 

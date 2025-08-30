@@ -1,9 +1,8 @@
-package String;
+package string.bronze;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class b_1543 {
+public class No_1543 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
